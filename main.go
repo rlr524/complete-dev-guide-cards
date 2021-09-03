@@ -1,10 +1,11 @@
 package main
 
+import "fmt"
+
 const player string = "Madison"
 
 func main() {
 	cards := NewDeck()
-	hand, remainingCards := Deal(cards, 5)
-	hand.Print()
-	remainingCards.Print()
+	cardsString := cards.toString()
+	fmt.Println(cardsString)
 }

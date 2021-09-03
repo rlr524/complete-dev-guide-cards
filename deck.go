@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 // Deck is a slice of strings
 type Deck []string
@@ -30,5 +33,12 @@ func (d Deck) Print() {
 }
 
 func Deal(d Deck, handSize int) (Deck, Deck) {
-	return d[:handSize], d[handSize:]
+	deckSizeStart := d[:handSize]
+	deckSizeEnd := d[handSize:]
+	return deckSizeStart, deckSizeEnd
+}
+
+func (d Deck) toString() string {
+	sliceAsString := strings.Join([]string(d), ",")
+	return sliceAsString
 }
