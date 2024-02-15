@@ -10,13 +10,14 @@ type Deck []string
 
 func NewDeck() Deck {
 	cards := Deck{}
-	
+
 	cardSuits := []string{"Spades", "Diamonds", "Clubs", "Hearts"}
-	cardRankings := []string{"Ace", "King", "Queen", "Jack", "Ten", "Nine", "Eight", "Seven", "Six", "Five", "Four", "Three", "Two"}
-	
+	cardRankings := []string{"Ace", "King", "Queen", "Jack", "Ten", "Nine", "Eight",
+		"Seven", "Six", "Five", "Four", "Three", "Two"}
+
 	for _, suit := range cardSuits {
 		for _, rank := range cardRankings {
-			cards = append(cards, rank + " of " + suit)
+			cards = append(cards, rank+" of "+suit)
 		}
 	}
 	return cards
@@ -39,6 +40,6 @@ func Deal(d Deck, handSize int) (Deck, Deck) {
 }
 
 func (d Deck) toString() string {
-	sliceAsString := strings.Join([]string(d), ",")
+	sliceAsString := strings.Join(d, ",")
 	return sliceAsString
 }

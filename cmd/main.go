@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 const player string = "Madison"
 
@@ -8,4 +10,5 @@ func main() {
 	cards := NewDeck()
 	cardsString := cards.toString()
 	fmt.Println(cardsString)
+	cards.Print()
 }
