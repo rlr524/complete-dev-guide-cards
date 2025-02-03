@@ -1,14 +1,17 @@
 package main
 
-import (
-	"fmt"
-)
-
 const player string = "Madison"
 
 func main() {
-	cards := NewDeck()
-	cardsString := cards.toString()
-	fmt.Println(cardsString)
-	cards.Print()
+	//cards := newDeck()
+	//cardsString := cards.toString()
+	//fmt.Println(cardsString)
+	//
+	//err := cards.saveToFile("madi_cards")
+	//if err != nil {
+	//	return
+	//}
+
+	cards := newDeckFromFile("madi_cards")
+	cards.print()
 }
